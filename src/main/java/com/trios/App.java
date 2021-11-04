@@ -18,7 +18,7 @@ public class App
         addEmployee( "Shaun","Pollock" );
         addEmployee( "Hansi","Cronje" );
 
-        getEmployee(1619);
+        getEmployee(1002);
         emf.close();
     }
 
@@ -53,7 +53,7 @@ public class App
         TypedQuery<Employee> tq = em.createQuery("select e from Employee e where e.empId=:id", Employee.class);
         tq.setParameter("id", id);
         Employee emp = tq.getSingleResult();
-        System.out.println(emp.getFirstName()+" "+emp.getLastName());
+        System.out.println(emp.getFirstName()+" "+emp.getLastName() +" "+emp.getDepartmentId().getDepartmentName());
         }catch(Exception ex){
             ex.printStackTrace();
         }finally {

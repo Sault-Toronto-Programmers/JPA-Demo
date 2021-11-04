@@ -33,7 +33,17 @@ public class Employee {
     @Column(name="jobTitle")
     private String jobTitle;
 
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department departmentId;
 
+    public Department getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Department departmentId) {
+        this.departmentId = departmentId;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
